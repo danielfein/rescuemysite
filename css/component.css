@@ -16,33 +16,37 @@
 /* Title */
 .fs-title {
 	position: absolute;
-text-align: center;
+
+	text-align: center;
 text-transform: uppercase;
 	margin: 0 auto;
 	padding: 40px;
 	width: 100%;
 	letter-spacing: 3px;
-		font-family: "Helvetica Neue-Thin", Helvetica, Arial, sans-serif;
+
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: black;
+	font-weight: bold !important;
 }
 
 .fs-title h1 {
 	margin: 0 auto;
-	font-weight: 100;
-	font-size: 48px;
+	font-size: 16px;
 
 }
 .fs-title h2 {
 	margin: 0 auto;
 	font-weight: 100;
-	font-size: 13px;
+	font-size: 11px;
 
+	margin-top: 10px;
 }
 
 /* Form */
 .fs-form {
 	position: relative;
 	text-align: left;
-	font-size: 2.5em;
+	font-size: 1.5em;
 }
 
 .no-js .fs-form {
@@ -77,7 +81,8 @@ text-transform: uppercase;
 .fs-form-full {
 	top: 32%;
 	margin: 0 auto;
-	width: 70%;
+	width: 100%;
+	color: black;
 }
 
 .fs-form-full,
@@ -89,15 +94,15 @@ text-transform: uppercase;
 	padding: 2.5em 30% 6em;
 	width: 100%;
 	height: 100%;
-	background: #fffed8;
-	color: #3b3f45;
+	background: #000000;
+	color: #FFFFFF;
 	font-size: 1.2em;
 }
 
 .fs-form-overview .fs-fields::before {
 	display: block;
-	margin-bottom: 2.5em;
-	color: #3b3f45;
+	margin-bottom: -0.5em;
+	color: white;
 	content: 'Review & Submit';
 	font-weight: 700;
 	font-size: 1.85em;
@@ -150,7 +155,9 @@ button.fs-continue,
 .fs-show {
 	visibility: visible !important;
 }
-
+.fs-nav-dots button:first-child{
+	display: none;
+}
 /* Some general styles */
 .fs-form-wrap button {
 	border: none;
@@ -179,6 +186,7 @@ button.fs-continue,
 	padding: 0;
 	top: 0;
 	list-style: none;
+	width: 100%;
 }
 
 .fs-form-overview ol {
@@ -282,11 +290,12 @@ button.fs-continue,
 	border: none;
 	border-bottom: 2px solid rgba(0,0,0,0.2);
 	background-color: transparent;
-	color: #fffed8;
+	color: #000000;
 	text-overflow: ellipsis;
 	font-weight: bold;
 	font-size: 1.5em;
 	border-radius: 0;
+	padding: 0px;
 }
 
 .fs-fields input:invalid {
@@ -306,15 +315,19 @@ button.fs-continue,
 }
 
 .fs-fields input:focus {
-	background-color: #3b3f45; /* Fixes chrome bug with placeholder */
+	background-color: #E3E3E3; /* Fixes chrome bug with placeholder */
+	border: 0;
+	padding: 10px;
+	color: black;
 }
 
 .fs-form-overview .fs-fields input:focus {
-	background-color: #fffed8; /* Fixes chrome bug with placeholder */
+	background-color: #000000; /* Fixes chrome bug with placeholder */
 }
 
 .fs-form-overview .fs-fields input {
 	font-size: 1.2em;
+	color: #D05151;
 }
 
 .fs-fields .fs-radio-custom input[type="radio"] {
@@ -412,7 +425,6 @@ button.fs-continue,
 	height: 200px;
 	border: 2px solid rgba(0,0,0,0.2);
 	background-color: transparent;
-	color: #fffed8;
 	font-weight: 700;
 	font-size: 0.85em;
 	resize: none;
@@ -544,18 +556,18 @@ button.fs-continue,
 
 .fs-nav-dots button:hover::before,
 .fs-nav-dots button.fs-dot-current::before {
-	background: #fffed8;
+	background: #C11E1E;
 }
 
 /* Progress bar */
 .fs-progress {
 	position: absolute;
-	top: 0;
 	width: 0%;
-	height: 0.5em;
-	background: #fffed8;
+	height: 0.35em;
+	background: #BA4747;
 	-webkit-transition: width 0.3s ease-in-out;
 	transition: width 0.3s ease-in-out;
+	bottom: 0;
 }
 
 /* Number indicator */
@@ -667,6 +679,9 @@ button.fs-continue {
 	border-radius: 40px;
 	font-weight: 700;
 	color: rgba(0,0,0,0.4);
+	width: 70%;
+	margin: auto;
+	left: 0;
 }
 
 .fs-form-overview .fs-submit,
@@ -683,8 +698,8 @@ button.fs-continue {
 button.fs-continue {
 	position: absolute;
 	right: 0;
-	bottom: 0;
-	margin: 0 40px 60px 0;
+	bottom: 40px;
+	margin: auto;
 	font-size: 1.25em;
 }
 
@@ -875,15 +890,16 @@ input[type=text]::-ms-clear {
 	}
 
 	button.fs-continue {
-		right: 20px;
-		bottom: 20px;
+		right: 0 !important;
+		bottom: 150px;
 		margin: 0;
 		padding: 50px 0 0 50px;
 		width: 50px;
 		height: 50px;
-		border-radius: 50%;
 		font-size: 2em;
-	}
+
+		left: 30px;
+}
 
 	button.fs-continue::before {
 		position: absolute;
